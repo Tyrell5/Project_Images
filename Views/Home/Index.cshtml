@@ -1,4 +1,4 @@
-﻿@model IEnumerable<Images>
+﻿@model IEnumerable<BadImageFormatException>
 @{
     ViewData["Title"] = "Home Page";
 }
@@ -9,21 +9,13 @@
 {
     <table>
         <tr>
-            <th>Profile Picture</th>
+            <th>Picture</th>
             <th>User Name</th>
         </tr>
         @foreach (var item in Model)
         {
             <td>
-                @if (item.Picture != null)
-                {
-                    var based64 = Convert.ToBase64String(item.Picture);
-                    var img = string.Format("data:Image/jpg;base64.{0}", based64);
-                    <img src="@img" width="100px" height="100px" />
-                }
-            </td>
-            <td>
-                @Html.DisplayFor(m => item.Name)
+                @Html.DisplayFor(m => item.Data)
             </td>
         }
     </table>

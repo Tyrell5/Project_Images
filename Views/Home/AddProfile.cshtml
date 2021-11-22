@@ -1,0 +1,15 @@
+﻿@model BadImageFormatException
+@{
+    ViewData["Title"] = "AddProfile";
+}
+
+<h1>Add Profile</h1>
+
+<fomr method="post" enctype="multipart/form-data">
+    <div class="=form-group">
+        <input asp-for="Name" placeholder="Enter userName" />
+        <input asp-for="Picture" type="file" name="file" />
+        <button type="submit" class="btn btn-success">Add Profile</button>
+    </div>
+</fomr>
+
